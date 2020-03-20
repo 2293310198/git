@@ -20,6 +20,17 @@ file_size_M=file_size/1024.0/1024.0
 print(r.status_code)
 print(r.headers)
 print("文件大小：%dM。"%file_size_M)
+#coding:utf-8
+import requests
+url="https://cn-zjjh5-dx-v-06.acgvideo.com/upgcxcode/89/93/9189389/9189389-1-80.flv?expires=1542543600&platform=pc&ssig=AVL5Pnr6wn7COMK2JxQEzQ&oi=454143221&nfa=7VMUDqBQpI8VGBbhQ1faUQ==&dynamic=1&hfa=2042788860&hfb=Yjk5ZmZjM2M1YzY4ZjAwYTMzMTIzYmIyNWY4ODJkNWI=&trid=12b1dae78a3a4c8f93b169c7a24a2899&nfc=1"
+headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+,'Referer':'https://www.bilibili.com/video/av5658851/?spm_id_from=333.338.b_7265636f6d6d656e645f7265706f7274.1'}
+r = requests.get(url,headers=headers,stream=True) 
+file_size = float(r.headers['Content-Length'])
+file_size_M=file_size/1024.0/1024.0
+print(r.status_code)
+print(r.headers)
+print("文件大小：%dM。"%file_size_M)
 '''
 Request URL:https://cn-zjjh5-dx-v-06.acgvideo.com/upgcxcode/89/93/9189389/9189389-1-80.flv?expires=1542543900&platform=pc&ssig=cMlI09nKXKBvyRqPai63oA&oi=454143221&nfa=7VMUDqBQpI8VGBbhQ1faUQ==&dynamic=1&hfa=2042788017&hfb=Yjk5ZmZjM2M1YzY4ZjAwYTMzMTIzYmIyNWY4ODJkNWI=&trid=cc4b55ee555b429582e197b7a06581cf&nfc=1
 Request Method:GET
